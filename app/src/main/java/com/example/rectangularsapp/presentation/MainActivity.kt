@@ -1,4 +1,4 @@
-package com.example.rectangularsapp
+package com.example.rectangularsapp.presentation
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
