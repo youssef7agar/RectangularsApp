@@ -2,6 +2,7 @@ package com.example.rectangularsapp.di.component
 
 import android.content.Context
 import com.example.rectangularsapp.di.module.AppModule
+import com.example.rectangularsapp.di.module.DomainModule
 import com.example.rectangularsapp.di.module.RemoteModule
 import com.example.rectangularsapp.presentation.MainActivity
 import com.example.rectangularsapp.util.MyApplication
@@ -13,7 +14,8 @@ import javax.inject.Singleton
 @Component(
     modules = [
         AppModule::class,
-        RemoteModule::class
+        RemoteModule::class,
+        DomainModule::class
     ]
 )
 interface ApplicationComponent {
