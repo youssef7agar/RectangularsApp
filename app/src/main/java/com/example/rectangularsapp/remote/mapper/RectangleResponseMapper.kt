@@ -4,6 +4,7 @@ import com.example.rectangularsapp.domain.model.Rectangle
 import com.example.rectangularsapp.domain.model.RectangleResponse
 import com.example.rectangularsapp.remote.model.RectangleRemote
 import com.example.rectangularsapp.remote.model.RectangleResponseRemote
+import java.util.concurrent.ThreadLocalRandom
 import javax.inject.Inject
 
 class RectangleResponseMapper @Inject constructor() {
@@ -28,6 +29,7 @@ class RectangleResponseMapper @Inject constructor() {
         assertEssentialParams(input)
 
         return Rectangle(
+            id = ThreadLocalRandom.current().nextInt(0, 1000 + 1).toLong(),
             x = input.x!!,
             y = input.y!!,
             size = input.size!!

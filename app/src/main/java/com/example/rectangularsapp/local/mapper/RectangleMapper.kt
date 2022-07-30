@@ -11,6 +11,7 @@ class RectangleMapper @Inject constructor() {
 
         return input.map {
             Rectangle(
+                id = it.randomKey,
                 x = it.x,
                 y = it.y,
                 size = it.size
@@ -23,7 +24,7 @@ class RectangleMapper @Inject constructor() {
 
         return input.map {
             RectangleLocal(
-                randomKey = ThreadLocalRandom.current().nextInt(0, 1000 + 1).toLong(),
+                randomKey = it.id,
                 x = it.x,
                 y = it.y,
                 size = it.size

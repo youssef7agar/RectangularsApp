@@ -36,7 +36,8 @@ class MainActivity : AppCompatActivity() {
         viewModel.postAction(
             MainViewAction.StoreScreenMetrics(
                 width = dis.widthPixels.toFloat(),
-                height = dis.heightPixels.toFloat()
+                height = dis.heightPixels.toFloat(),
+                time = System.currentTimeMillis()
             )
         )
 
@@ -90,7 +91,8 @@ class MainActivity : AppCompatActivity() {
 
                     viewModel.postAction(MainViewAction.UpdateRectangle1(
                         x = hBias,
-                        y = vBias
+                        y = vBias,
+                        time = System.currentTimeMillis()
                     ))
                 }
                 MotionEvent.ACTION_MOVE -> {
@@ -101,7 +103,8 @@ class MainActivity : AppCompatActivity() {
 
                     viewModel.postAction(MainViewAction.UpdateRectangle1(
                         x = hBias,
-                        y = vBias
+                        y = vBias,
+                        time = System.currentTimeMillis()
                     ))
                 }
                 else -> return@setOnTouchListener false
@@ -122,7 +125,8 @@ class MainActivity : AppCompatActivity() {
 
                     viewModel.postAction(MainViewAction.UpdateRectangle2(
                         x = hBias,
-                        y = vBias
+                        y = vBias,
+                        time = System.currentTimeMillis()
                     ))
                 }
                 MotionEvent.ACTION_MOVE -> {
@@ -133,7 +137,8 @@ class MainActivity : AppCompatActivity() {
 
                     viewModel.postAction(MainViewAction.UpdateRectangle2(
                         x = hBias,
-                        y = vBias
+                        y = vBias,
+                        time = System.currentTimeMillis()
                     ))
                 }
                 else -> return@setOnTouchListener false
