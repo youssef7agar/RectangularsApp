@@ -12,4 +12,8 @@ interface Repository {
     fun getRectanglesList(): Single<List<Rectangle>>
 
     fun insertRectangles(rectangles: List<Rectangle>): Completable
+
+    fun setLatestDay(newLatestDay: Long)
+
+    fun getLatestDay(): Long
 }
