@@ -13,7 +13,6 @@ class GetRectanglesListUseCase @Inject constructor(
 
     fun execute(): Single<List<Rectangle>> {
         return repository.getRectanglesList()
-            .observeOn(AndroidSchedulers.mainThread())
             .subscribeOn(Schedulers.io())
     }
 }
