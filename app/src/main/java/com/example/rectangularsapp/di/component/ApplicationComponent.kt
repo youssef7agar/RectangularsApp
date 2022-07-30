@@ -1,10 +1,7 @@
 package com.example.rectangularsapp.di.component
 
 import android.content.Context
-import com.example.rectangularsapp.di.module.AppModule
-import com.example.rectangularsapp.di.module.DomainModule
-import com.example.rectangularsapp.di.module.RemoteModule
-import com.example.rectangularsapp.di.module.ViewModelModule
+import com.example.rectangularsapp.di.module.*
 import com.example.rectangularsapp.presentation.view.MainActivity
 import com.example.rectangularsapp.util.MyApplication
 import dagger.BindsInstance
@@ -17,7 +14,8 @@ import javax.inject.Singleton
         AppModule::class,
         RemoteModule::class,
         DomainModule::class,
-        ViewModelModule::class
+        ViewModelModule::class,
+        LocalModule::class
     ]
 )
 interface ApplicationComponent {

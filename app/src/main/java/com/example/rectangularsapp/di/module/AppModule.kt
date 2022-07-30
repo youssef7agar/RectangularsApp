@@ -1,5 +1,8 @@
 package com.example.rectangularsapp.di.module
 
+import android.content.Context
+import com.example.rectangularsapp.local.DatabaseFactory
+import com.example.rectangularsapp.local.MyDatabase
 import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient
@@ -34,5 +37,13 @@ class AppModule {
             .addCallAdapterFactory(RxJava3CallAdapterFactory.create())
             .baseUrl("https://BASE_URL")
             .build()
+    }
+
+    @Provides
+    @Singleton
+    fun provideDatabase(
+        context: Context
+    ): MyDatabase {
+        return DatabaseFactory.createDatabase(context)
     }
 }
